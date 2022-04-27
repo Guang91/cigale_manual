@@ -1,0 +1,38 @@
+\section{Installation}\label{sec:install}
+The easiest way is to use pip installation.
+To do this, in the downloaded \xcig\ directory,
+simply run \\
+\$ \textit{pip install .} \\
+
+However, the pip installation above only allows you to use the default downloaded code. 
+If you want to modify the code to serve your own research interest, you can install from source. 
+The instruction is detailed at \url{https://github.com/mboquien/cigale/discussions/2}
+
+%We assume you have Python 3.4 or higher working on your computer.
+%We recommend using ANACONDA to install Python~3 (\url{https://www.anaconda.com/distribution/}).
+
+%\subsection{Method I: pip}
+%\begin{enumerate}
+%    \item Download the experimental wheel (.whl file) from \url{https://cigale.lam.fr/}
+%    \item Open terminal and run \\
+%        \$ \textit{pip install pcigale-2018.0.1-py3-none-any.whl} (or any other version of .whl file) \\
+%         to install \xcig. You can delete the .whl file after installation.
+%\end{enumerate}
+
+%\subsection{Method II: from source}
+%\begin{enumerate}
+%    \item Download the source file from \url{https://gitlab.lam.fr/gyang/cigale/tree/xray} and decompress
+%    \item Install dependencies. Open terminal and run:
+%    \begin{itemize}
+%        \item[\$] \textit{conda install astropy numpy scipy sqlite sqlalchemy matplotlib configobj}
+%    \end{itemize}
+%    \item \$ \textit{cd pcigale} (or whatever the name or the directory is)
+%    \item If you want to add your own filters for the SED analysis or the creation of models in filters, it is the correct time to do so.
+%          Just add your filters into the directory:./database\_builder/filters/.
+%          A minimum list of filter transmissions is provided with the \xcig\ distribution downloaded.
+%    \item \$ \textit{Python setup.py build} \\
+%          Note that if you already have the pcigale/data/data.db file, you need to delete it before re-building.
+%    \item \$ \textit{Python setup.py develop} \\
+%            will install \xcig. 
+%            Note that the pcigale directory should not be removed or \xcig\ will no longer works.
+%\end{enumerate}

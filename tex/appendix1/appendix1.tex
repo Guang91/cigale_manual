@@ -1,0 +1,128 @@
+\section*{Appendix A: Model Parameters}
+\label{app:par}
+\addcontentsline{toc}{section}{Appendix A: Model Parameters}
+The main parameters that can be analysed are listed below (see ``pcigale.ini'' and the output catalog for a full list of parameters)
+The free parameters that can be set directly in the ``pcigale.ini'' file are highlighted in blue. 
+
+If you wish to estimate the physical parameters in logarithmic, you only have to add ``\_log'' at the end of the name of the parameter, e.g., sfh.burst\_age will become sfh.burst\_age\_log
+and... le tour est jou\'e!
+
+%\begin{table}[h] 
+%\centering
+\begin{longtable}{| p{.20\textwidth} | p{.40\textwidth} | p{.40\textwidth} |} 
+\caption[Physical parameters in \xcig]{Physical parameters in \xcig. Free parameters are highlighted in blue.} \\ % needs to go inside longtable environment
+\hline
+Module & Parameter & Description \\ \hline
+sfh2exp & \textcolor{blue}{sfh.tau\_main}  & e-folding [Myr] time of the main stellar population model \\ \hline
+...     & \textcolor{blue}{sfh.tau\_burst} & e-folding [Myr] time of the late starburst population model \\ \hline
+...     & \textcolor{blue}{sfh.f\_burst}   & Mass fraction of the late burst population (0 to 1) \\ \hline
+...     & \textcolor{blue}{sfh.burst\_age} & Age [Myr] for the burst \\ \hline
+...     & \textcolor{blue}{sfh.age}        & Age [Myr] of the oldest stars in the galaxy \\ \hline
+...     & sfh.sfr                          & Instantaneous star formation rate \\ \hline
+...     & sfh.sfr10Myrs                    & Star formation rate averaged over 10 Myrs \\ \hline
+...     & sfh.sfr100Myrs                   & Star formation rate averaged over 100 Myrs \\ \hline
+...     & sfh.integrated                   & Star formation rate integrated from the star formation history \\ \hline
+sfhdelayed & \textcolor{blue}{sfh.tau\_main} & e-folding [Myr] time of the main stellar population model \\ \hline
+...        & \textcolor{blue}{sfh.age}       & Age [Myr] of the oldest stars in the galaxy \\ \hline
+...     & sfh.sfr                            & Instantaneous star formation rate \\ \hline
+...     & sfh.sfr10Myrs                      & Star formation rate averaged over 10 Myrs \\ \hline
+...     & sfh.sfr100Myrs                     & Star formation rate averaged over 100 Myrs \\ \hline
+...     & sfh.integrated                     & Star formation rate integrated from the star formation history \\ \hline
+sfhperiodic & \textcolor{blue}{sfh.delta\_bursts} & Elapsed time between the beginning of each burst in Myr. \\ \hline
+...         & \textcolor{blue}{sfh.tau\_bursts}   & Duration (rectangle) or e-folding time of all short events in Myr. \\ \hline
+...         & sfh.integrated                      & Star formation rate integrated from the star formation history \\ \hline
+sfhfromfile & \textcolor{blue}{sfh.id} & id of the input SFH \\ \hline
+...         & sfh.sfr                  & Instantaneous star formation rate \\ \hline
+...         & sfh.sfr10Myrs            & Star formation rate averaged over 10 Myrs \\ \hline
+...         & sfh.sfr100Myrs           & Star formation rate averaged over 100 Myrs \\ \hline
+...         & sfh.integrated           & Star formation rate integrated from the star formation history \\ \hline 
+m2005       & \textcolor{blue}{stellar.imf}                         & IMF of the stellar model \\ \hline
+...         & \textcolor{blue}{stellar.metallicity}                 & Metallicity of the stellar model \\ \hline
+...         & \textcolor{blue}{stellar.old\_young\_separation\_age} & Age of the separation old/young stars \\ \hline
+...         & stellar.mass\_total\_old                              & Stellar mass of old stars \\ \hline
+...         & stellar.mass\_alive\_old                              & Stellar mass of old stars alive \\ \hline
+...         & stellar.mass\_total\_young                            & Stellar mass of young stars \\ \hline
+...         & stellar.mass\_alive\_young                            & Stellar mass of young stars alive \\ \hline
+...         & stellar.mass\_total                                   & Total stellar mass of stars \\ \hline
+...         & stellar.mass\_alive                                   & Total stellar mass alive \\ \hline
+bc03        & \textcolor{blue}{stellar.imf}                         & IMF of the stellar model \\ \hline
+...         & \textcolor{blue}{stellar.metallicity}                 & Metallicity of the stellar model \\ \hline
+...         & \textcolor{blue}{stellar.old\_young\_separation\_age} & Age of the separation old/young stars \\ \hline
+...         & stellar.m\_star\_young                                & Stellar mass of young stellar population \\ \hline
+...         & stellar.n\_ly\_young                                  & Number of Ly continuum photons from young stellar population \\ \hline
+...         & stellar.m\_star\_old                                  & Stellar mass of old stellar population \\ \hline
+...         & stellar.n\_ly\_old                                    & Number of Ly continuum photons from old stellar population \\ \hline
+...         & stellar.m\_star                                       & Total mass of stars \\ \hline
+nebular & \textcolor{blue}{nebular.f\_esc}  & Fraction of Lyman continuum photons escaping the galaxy \\ \hline
+...     & \textcolor{blue}{nebular.f\_dust} & Fraction of Lyman continuum photons absorbed by dust \\ \hline
+...     & \textcolor{blue}{nebular.logU}    & Ionisation parameter \\ \hline
+dustatt\_calzleit    & \textcolor{blue}{attenuation.uv\_bump\_amplitude}  & Amplitude of the UV bump. For the Milky Way: 3 \\ \hline
+...                  & \textcolor{blue}{attenuation.powerlaw\_slope}      & Slope delta of the power law modifying the attenuation curve \\ \hline
+...                  & \textcolor{blue}{attenuation.E\_BVs.stellar.young} & E(B-V) of the young stellar population. Note that E(B-V) is an internal parameter which does not correspond to E(B-V) except for the exact calzetti law (delta=0), E(B-V)= $A_B -A_V$ should be calculated by the user. \\ \hline
+...                  & \textcolor{blue}{attenuation.ebvs\_old\_factor}    & Reduction factor of E(B-V) for the old population compared to the young one \\ \hline
+...                  & attenuation.E\_BVs.stellar.old & E(B-V) of the old stellar population. Note that E(B-V) is an internal parameter which does not correspond to E(B-V) except for the exact calzetti law (delta=0), E(B-V)= $A_B -A_V$ should be calculated by the user.  \\ \hline
+...                  & attenuation.(filter)                               & Attenuation in a given filter. This filter (e.g., FUV, B, V,...) must be provided to \xcig. \\ \hline 
+dustatt\_powerlaw & \textcolor{blue}{attenuation.uv\_bump\_amplitude}  & Amplitude of the UV bump. For the Milky Way: 3 \\ \hline
+...               & \textcolor{blue}{attenuation.powerlaw\_slope}      & Slope delta of the power law modifying the attenuation curve \\ \hline
+...               & \textcolor{blue}{attenuation.Av.stellar.young}     & V-band attenuation of the young population \\ \hline
+...               & \textcolor{blue}{attenuation.av\_old\_factor}      & Reduction factor of $A_V$ for the old population compared to the young one \\ \hline        
+...               & attenuation.Av.stellar.young                       & V-band attenuation of the old population \\ \hline
+...               & attenuation.(filter)                               & Attenuation in a given filter. This filter (e.g., FUV, B, V,...) must be provided to \xcig \\ \hline 
+dl2014 & \textcolor{blue}{dust.umin}  & Parameter U\_min in \cite{draine07} templates \\ \hline
+...    & \textcolor{blue}{dust.alpha} & Parameter alpha\_max in \cite{draine07} templates \\ \hline
+...    & \textcolor{blue}{dust.gamma} & Parameter gamma in \cite{draine07} templates \\ \hline 
+...    & \textcolor{blue}{dust.qpah}  & Parameter q$_{\rm PAH}$ in \cite{draine14} updated templates \\ \hline
+...    & dust.luminosity              & Estimated dust luminosity using an energy balance \\ \hline
+dale2014 & \textcolor{blue}{agn.fracAGN\_dale2014} & AGN fraction. Note that the AGN is a type 1 \\ \hline
+...      & \textcolor{blue}{dust.alpha}            & Parameter alpha$_{\rm max}$ in \cite{dale14} templates \\ \hline
+...      & dust.luminosity                         & Estimated dust luminosity using an energy balance \\ \hline
+fritz2006 & \textcolor{blue}{agn.gamma}            & Parameter gamma in \cite{fritz06} \\ \hline
+...       & \textcolor{blue}{agn.opening\_angle}   & Full opening angle of the dust torus (Fig 1 of \cite{fritz06}) \\ \hline
+...       & \textcolor{blue}{agn.psy}              & Angle between AGN axis and line of sight \\ \hline
+...       & \textcolor{blue}{agn.fracAGN}          & Fraction of AGN IR luminosity to total IR luminosity \\ \hline
+...       & \textcolor{blue}{agn.r\_ratio}         & Ratio of the maximum to minimum radii of the dust torus \\ \hline
+...       & \textcolor{blue}{agn.tau}              & Torus optical depth at 9.7 microns \\ \hline
+...       & \textcolor{blue}{agn.beta}             & Parameter beta in \cite{fritz06} \\ \hline
+...       & \textcolor{blue}{agn.law}              & The extinction law of polar dust: 0 (SMC), 1 \cite{calzetti00}, or 2 \cite{gaskell04} \\ \hline
+...       & \textcolor{blue}{agn.EBV}              & E(B-V) for extinction in polar direction \\ \hline
+...       & \textcolor{blue}{agn.temperature}      & Temperature of the polar dust in K \\ \hline
+...       & \textcolor{blue}{agn.emissivity}       & Emissivity index of the polar dust \\ \hline
+...       & agn.disk\_luminosity                   & The AGN disc luminosity (might be extincted) \\ \hline
+...       & agn.therm\_luminosity                  & The AGN dust reemitted luminosity \\ \hline
+...       & agn.scatt\_luminosity                  & The AGN scattered luminosity \\ \hline
+...       & agn.luminosity                         & The sum of agn.disk\_luminosity, agn.therm\_luminosity, and agn.scatt\_luminosity \\ \hline
+...       & agn.intrin\_Lnu\_2500A                 & The intrinsic AGN $L_\nu$ at 2500~\AA\ \\ \hline
+...       & agn.accretion\_power                   & The intrinsic AGN disk luminosity averaged over all directions \\ \hline
+skirtor2016 & \textcolor{blue}{agn.t}           & Average edge-on torus optical depth at 9.7 micron \\ \hline
+...         & \textcolor{blue}{agn.pl}          & Power-law exponent that sets radial gradient of dust density \\ \hline
+...         & \textcolor{blue}{agn.q}           & Index that sets dust density gradient with polar angle \\ \hline
+...         & \textcolor{blue}{agn.oa}          & Angle measured between the equatorial plan and edge of the torus \\ \hline
+...         & \textcolor{blue}{agn.R}           & Ratio of outer to inner radius, R\_out/R\_in \\ \hline
+...         & \textcolor{blue}{agn.i}           & Viewing angle. i=[0, 90$^\circ$-oa): face-on, type 1 view; i=[90$^\circ$-oa, 90$^\circ$]: edge-on, type 2 view \\ \hline
+...         & \textcolor{blue}{agn.fracAGN}     & Fraction of AGN IR luminosity to total IR luminosity \\ \hline
+...         & \textcolor{blue}{agn.law}         & The extinction law of polar dust: 0 (SMC), 1 \cite{calzetti00}, or 2 \cite{gaskell04} \\ \hline
+...         & \textcolor{blue}{agn.EBV}         & E(B-V) for extinction in polar direction \\ \hline
+...         & \textcolor{blue}{agn.temperature} & Temperature of the polar dust in K \\ \hline
+...         & \textcolor{blue}{agn.emissivity}  & Emissivity index of the polar dust \\ \hline
+...         & agn.disk\_luminosity              & The observed AGN disc luminosity (might be extincted) \\ \hline
+...         & agn.dust\_luminosity              & The observed AGN dust reemitted luminosity \\ \hline
+...         & agn.luminosity                    & The sum of agn.disk\_luminosity and agn.dust\_luminosity \\ \hline
+...         & agn.intrin\_Lnu\_2500A            & The intrinsic AGN $L_\nu$ at 2500~\AA\ at viewing angle $=30^\circ$ \\ \hline
+...         & agn.accretion\_power              & The intrinsic AGN disk luminosity averaged over all directions \\ \hline
+xray & \textcolor{blue}{xray.gam}                 & The photon index (Gamma) of AGN intrinsic X-ray spectrum \\ \hline
+...  & \textcolor{blue}{xray.max\_dev\_alpha\_ox} & Maximum deviation from the $\ox$-$\luv$ relation in \cite{just07} \\ \hline
+...  & \textcolor{blue}{xray.gam\_lmxb}           & The photon index of AGN low-mass X-ray binaries \\ \hline
+...  & \textcolor{blue}{xray.gam\_hmxb}           & The photon index of AGN high-mass X-ray binaries \\ \hline
+...  & xray.agn\_Lnu\_2keV                        & The AGN $L_\nu$ at 2~keV \\ \hline
+...  & xray.agn\_Lx\_2to10keV                     & The AGN 2--10~keV luminosity \\ \hline
+...  & xray.agn\_Lx\_total                        & The AGN total (0.25--1200~keV) \xray\ luminosity \\ \hline
+...  & xray.alpha\_ox                             & The AGN $\ox$ \\ \hline
+...  & xray.lmxb\_Lx\_2to10keV                    & The 2--10~keV LMXB luminosity \\ \hline
+...  & xray.hmxb\_Lx\_2to10keV                    & The 2--10~keV HMXB luminosity \\ \hline
+...  & xray.hotgas\_Lx\_0p5to2keV                 & The 0.5--2~keV hot-gas luminosity \\ \hline
+radio & \textcolor{blue}{radio\_qir}   & FIR/radio ratio \\ \hline
+...   & \textcolor{blue}{radio\_alpha} & slope of the power-law synchrotron emission \\ \hline
+redshifting & \textcolor{blue}{universe.redshift} & redshift \\ \hline
+...         & universe.luminosity\_distance       & Luminosity distance \\ \hline
+...         & universe.age                        & Age of the universe \\ \hline
+\end{longtable}

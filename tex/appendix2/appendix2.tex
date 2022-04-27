@@ -1,0 +1,17 @@
+\section*{Appendix B: Supplementary Files}\label{app:file}
+\addcontentsline{toc}{section}{Appendix B: Supplementary Files}
+The following {\sc python} codes are available in the folder ``code'' along with this manual. 
+\begin{itemize}
+    \item ``code/convert\_Fx.py'' contains a function that converts \xray\ flux (erg~s$^{-1}$~cm$^{-2}$) to flux density (mJy), which can be used as \xcig\ input (see \S\ref{sec:xray}).  
+    \item ``code/read\_chi.py'' contains two functions that read the raw $\chi^2$ .npy files in \xcig\ outputs (see \S\ref{sec:pdf_res}). 
+    One function, {\sc get\_cigale\_prob}, read the $\chi^2$ file for one parameter to plot the 1D probability density function (PDF). 
+    The other function, {\sc get\_cigale\_prob\_2d}, read the $\chi^2$ files for two parameter to plot the 2D PDF. 
+    \item ``code/xray\_filter.py'' contains a function that writes a boxcar-shaped \xray\ filter that can be used by \xcig\ (see \S\ref{sec:xray}).
+\end{itemize}
+
+The following \xcig\ example runs are available in the folder ``examples'' along with this manual. 
+\begin{itemize}
+    \item ``examples/akari\_nep\_xray\_agn'' contains the configuration and data files for the \xray\ selected AGNs in the \hbox{AKARI-NEP} field (see \S3.3 of \citealt{yang20}). 
+    \item ``examples/sdss\_qso'' contains the \xray\ detected AGNs in the SDSS DR14 QSO catalog (see \S3.1 of \citealt{yang20}).
+    \item ``examples/simulate\_bzk'' contains the configuration files for the simulation of the $BzK$ diagram (Fig.~\ref{fig:bzk}). 
+\end{itemize}
